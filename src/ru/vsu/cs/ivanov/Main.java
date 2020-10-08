@@ -39,7 +39,7 @@ public class Main {
     }
 
     private static void drawRepeatedCharacters (int s, char character) { //выводит длинные последовательности повторяющихся символов
-        for (int j = 0; j < ((s - 4) / 3); j++) {
+        for (int i = 0; i < ((s - 4) / 3); i++) {
             System.out.print(character);
         }
     }
