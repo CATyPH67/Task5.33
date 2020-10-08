@@ -13,33 +13,33 @@ public class Main {
 
     private static void drawFigure(int s) {
         for (int i = 0; i < s; i++) {
-            if ((i == 0) || (i == (s - 1))) {
+            if ((i == 0) || (i == (s - 1))) { //условие для первой и последней строки
                 drawString (s, ' ', ' ', '*', '_');
             }
-            if (((i > 0) && (i < (s - 4) / 3 + 1)) || (i < (s - 1) && (i > (s - (s - 4) / 3 - 1)))) {
+            if (((i > 0) && (i < (s - 4) / 3 + 1)) || (i < (s - 1) && (i > (s - (s - 4) / 3 - 1)))) { //условие для строк c "|" в верхней и нижней части
                 drawString (s, ' ', ' ', '|', ' ');
             }
-            if (i == ((s - 4) / 3 + 1) || (i == ((s - 1) - (s - 4) / 3 - 1))) {
+            if (i == ((s - 4) / 3 + 1) || (i == ((s - 1) - (s - 4) / 3 - 1))) { //условие для строк с "*" в средней части
                 drawString (s, '*', '_', '*', ' ');
             }
-            if ((i > ((s - 4) / 3 + 1)) && (i < ((s - 1) - (s - 4) / 3 - 1))) {
+            if ((i > ((s - 4) / 3 + 1)) && (i < ((s - 1) - (s - 4) / 3 - 1))) { //условие для строк с "|" в средней части
                 drawString (s, '|', ' ', ' ', ' ');
             }
         }
     }
 
     private static void drawString (int s, char char1, char char2, char char3, char char4) {
-        System.out.print(char1);
-        drawCharactersBetweenAsterisks (s, char2);
-        System.out.print(char3);
-        drawCharactersBetweenAsterisks (s, char4);
-        System.out.print(char3);
-        drawCharactersBetweenAsterisks (s, char2);
-        System.out.println(char1);
+        System.out.print(char1);                    //выводит самый левый символ
+        drawCharactersBetweenAsterisks (s, char2);  //выводит левую длинную послеовательность символов
+        System.out.print(char3);                    //выводит средний левый символ
+        drawCharactersBetweenAsterisks (s, char4);  //выводит среднюю длинную послеовательность символов
+        System.out.print(char3);                    //выводит средний правый символ
+        drawCharactersBetweenAsterisks (s, char2);  //выводит правую длинную послеовательность символов
+        System.out.println(char1);                  //выводит самый правый символ
     }
 
-    private static void drawCharactersBetweenAsterisks (int s, char character) {
-        for (int j = 0; j < ((s - 4) / 3); j++) {
+    private static void drawCharactersBetweenAsterisks (int s, char character) { //выводит длинные последовательности
+        for (int j = 0; j < ((s - 4) / 3); j++) {                                //символов (стороны многоугольника)
             System.out.print(character);
         }
     }
