@@ -29,13 +29,13 @@ public class Main {
     }
 
     private static void drawString (int s, char char1, char char2, char char3, char char4) {
-        System.out.print(char1);                    //выводит самый левый символ
+        System.out.print(char1);            //выводит самый левый символ
         drawRepeatedCharacters (s, char2);  //выводит левую длинную послеовательность символов
-        System.out.print(char3);                    //выводит средний левый символ
+        System.out.print(char3);            //выводит средний левый символ
         drawRepeatedCharacters (s, char4);  //выводит среднюю длинную послеовательность символов
-        System.out.print(char3);                    //выводит средний правый символ
+        System.out.print(char3);            //выводит средний правый символ
         drawRepeatedCharacters (s, char2);  //выводит правую длинную послеовательность символов
-        System.out.println(char1);                  //выводит самый правый символ
+        System.out.println(char1);          //выводит самый правый символ
     }
 
     private static void drawRepeatedCharacters (int s, char character) { //выводит длинные последовательности повторяющихся символов
