@@ -38,8 +38,8 @@ public class Main {
         System.out.println(char1);                  //выводит самый правый символ
     }
 
-    private static void drawCharactersBetweenAsterisks (int s, char character) { //выводит длинные последовательности
-        for (int j = 0; j < ((s - 4) / 3); j++) {                                //символов (стороны многоугольника)
+    private static void drawCharactersBetweenAsterisks (int s, char character) { //выводит длинные последовательности повторяющихся символов
+        for (int j = 0; j < ((s - 4) / 3); j++) {
             System.out.print(character);
         }
     }
