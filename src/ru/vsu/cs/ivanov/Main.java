@@ -30,15 +30,15 @@ public class Main {
 
     private static void drawString (int s, char char1, char char2, char char3, char char4) {
         System.out.print(char1);                    //выводит самый левый символ
-        drawCharactersBetweenAsterisks (s, char2);  //выводит левую длинную послеовательность символов
+        drawRepeatedCharacters (s, char2);  //выводит левую длинную послеовательность символов
         System.out.print(char3);                    //выводит средний левый символ
-        drawCharactersBetweenAsterisks (s, char4);  //выводит среднюю длинную послеовательность символов
+        drawRepeatedCharacters (s, char4);  //выводит среднюю длинную послеовательность символов
         System.out.print(char3);                    //выводит средний правый символ
-        drawCharactersBetweenAsterisks (s, char2);  //выводит правую длинную послеовательность символов
+        drawRepeatedCharacters (s, char2);  //выводит правую длинную послеовательность символов
         System.out.println(char1);                  //выводит самый правый символ
     }
 
-    private static void drawCharactersBetweenAsterisks (int s, char character) { //выводит длинные последовательности повторяющихся символов
+    private static void drawRepeatedCharacters (int s, char character) { //выводит длинные последовательности повторяющихся символов
         for (int j = 0; j < ((s - 4) / 3); j++) {
             System.out.print(character);
         }
