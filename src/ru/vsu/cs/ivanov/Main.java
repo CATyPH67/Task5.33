@@ -17,14 +17,14 @@ public class Main {
             if ((i == 0) || (i == (s - 1))) { //условие для первой и последней строки
                 drawString(s, ' ', ' ', '*', '_');
             }
-            if (((i > 0) && (i < longOfRepeatedCharacters + 1)) || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) { //условие для строк c "|"
-                drawString(s, ' ', ' ', '|', ' ');                              //в верхней и нижней части
+            if (((i > 0) && (i < longOfRepeatedCharacters + 1)) || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) {
+                drawString(s, ' ', ' ', '|', ' '); //условие для строк c "|" в верхней и нижней части
             }
-            if (i == (longOfRepeatedCharacters + 1) || (i == ((s - 1) - longOfRepeatedCharacters - 1))) { //условие для строк с "*" в средней части
-                drawString(s, '*', '_', '*', ' ');
+            if (i == (longOfRepeatedCharacters + 1) || (i == ((s - 1) - longOfRepeatedCharacters - 1))) {
+                drawString(s, '*', '_', '*', ' '); //условие для строк с "*" в средней части
             }
-            if ((i > (longOfRepeatedCharacters + 1)) && (i < ((s - 1) - longOfRepeatedCharacters - 1))) { //условие для строк с "|" в средней части
-                drawString(s, '|', ' ', ' ', ' ');
+            if ((i > (longOfRepeatedCharacters + 1)) && (i < ((s - 1) - longOfRepeatedCharacters - 1))) {
+                drawString(s, '|', ' ', ' ', ' '); //условие для строк с "|" в средней части
             }
         }
     }
