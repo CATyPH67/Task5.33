@@ -5,10 +5,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        drawFigure(enterS());
+    }
+
+    private static int enterS() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("enter the s: ");
-        int s = scan.nextInt();
-        drawFigure(s);
+        int s;
+        do {
+            System.out.print("enter the s (s = 4 + 3n, n = 0, 1, 2, 3, ...): ");
+            s = scan.nextInt();
+        } while (((s - 4) % 3 != 0) || (s < 4));
+        return s;
     }
 
     private static void drawFigure(int s) {
@@ -38,21 +45,21 @@ public class Main {
         //выводит самый левый символ
         System.out.print(char1);
         //выводит левую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char2);
+        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char2);
         //выводит средний левый символ
         System.out.print(char3);
         //выводит среднюю длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char4);
+        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char4);
         //выводит средний правый символ
         System.out.print(char3);
         //выводит правую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char2);
+        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char2);
         //выводит самый правый символ
         System.out.println(char1);
     }
 
     //выводит длинные последовательности повторяющихся символов
-    private static void drawRepeatedCharactersForPartOfStringOfFigure(int s, int longOfRepeatedCharacters, char character) {
+    private static void drawRepeatedCharactersForPartOfStringOfFigure(int longOfRepeatedCharacters, char character) {
 
         for (int i = 0; i < longOfRepeatedCharacters; i++) {
             System.out.print(character);
