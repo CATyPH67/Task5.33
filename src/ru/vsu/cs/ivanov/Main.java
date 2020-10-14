@@ -14,33 +14,47 @@ public class Main {
     private static void drawFigure(int s) {
         int longOfRepeatedCharacters = (s - 4) / 3;
         for (int i = 0; i < s; i++) {
-            if ((i == 0) || (i == (s - 1))) { //условие для первой и последней строки
-                drawString(s, ' ', ' ', '*', '_');
+            //условие для первой и последней строки
+            if ((i == 0) || (i == (s - 1))) {
+                drawStringOfFigure(s, longOfRepeatedCharacters, ' ', ' ', '*', '_');
             }
-            if (((i > 0) && (i < longOfRepeatedCharacters + 1)) || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) {
-                drawString(s, ' ', ' ', '|', ' '); //условие для строк c "|" в верхней и нижней части
+            //условие для строк c "|" в верхней и нижней части
+            if (((i > 0) && (i < longOfRepeatedCharacters + 1))
+                    || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) {
+                drawStringOfFigure(s, longOfRepeatedCharacters, ' ', ' ', '|', ' ');
             }
+            //условие для строк с "*" в средней части
             if (i == (longOfRepeatedCharacters + 1) || (i == ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawString(s, '*', '_', '*', ' '); //условие для строк с "*" в средней части
+                drawStringOfFigure(s, longOfRepeatedCharacters,  '*', '_', '*', ' ');
             }
+            //условие для строк с "|" в средней части
             if ((i > (longOfRepeatedCharacters + 1)) && (i < ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawString(s, '|', ' ', ' ', ' '); //условие для строк с "|" в средней части
+                drawStringOfFigure(s, longOfRepeatedCharacters,  '|', ' ', ' ', ' ');
             }
         }
     }
 
-    private static void drawString(int s, char char1, char char2, char char3, char char4) {
-        System.out.print(char1);            //выводит самый левый символ
-        drawRepeatedCharacters (s, char2);  //выводит левую длинную послеовательность символов
-        System.out.print(char3);            //выводит средний левый символ
-        drawRepeatedCharacters (s, char4);  //выводит среднюю длинную послеовательность символов
-        System.out.print(char3);            //выводит средний правый символ
-        drawRepeatedCharacters (s, char2);  //выводит правую длинную послеовательность символов
-        System.out.println(char1);          //выводит самый правый символ
+    private static void drawStringOfFigure(int s, int longOfRepeatedCharacters, char char1, char char2, char char3, char char4) {
+        //выводит самый левый символ
+        System.out.print(char1);
+        //выводит левую длинную послеовательность символов
+        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char2);
+        //выводит средний левый символ
+        System.out.print(char3);
+        //выводит среднюю длинную послеовательность символов
+        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char4);
+        //выводит средний правый символ
+        System.out.print(char3);
+        //выводит правую длинную послеовательность символов
+        drawRepeatedCharactersForPartOfStringOfFigure (s, longOfRepeatedCharacters, char2);
+        //выводит самый правый символ
+        System.out.println(char1);
     }
 
-    private static void drawRepeatedCharacters(int s, char character) { //выводит длинные последовательности повторяющихся символов
-        for (int i = 0; i < ((s - 4) / 3); i++) {
+    //выводит длинные последовательности повторяющихся символов
+    private static void drawRepeatedCharactersForPartOfStringOfFigure(int s, int longOfRepeatedCharacters, char character) {
+
+        for (int i = 0; i < longOfRepeatedCharacters; i++) {
             System.out.print(character);
         }
     }
