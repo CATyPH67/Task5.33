@@ -61,7 +61,7 @@ public class Main {
     //выводит длинные последовательности повторяющихся символов
     private static void drawRepeatedCharactersForPartOfStringOfFigure(int longOfRepeatedCharacters, char character) {
 
-        for (int i = 0; i < longOfRepeatedCharacters * 2; i++) {
+        for (int i = 0; i < longOfRepeatedCharacters; i++) {
             System.out.print(character);
         }
     }
