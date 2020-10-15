@@ -45,15 +45,15 @@ public class Main {
         //выводит самый левый символ
         System.out.print(char1);
         //выводит левую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char2);
+        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char2);
         //выводит средний левый символ
         System.out.print(char3);
         //выводит среднюю длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char4);
+        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char4);
         //выводит средний правый символ
         System.out.print(char3);
         //выводит правую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure (longOfRepeatedCharacters, char2);
+        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char2);
         //выводит самый правый символ
         System.out.println(char1);
     }
@@ -61,7 +61,7 @@ public class Main {
     //выводит длинные последовательности повторяющихся символов
     private static void drawRepeatedCharactersForPartOfStringOfFigure(int longOfRepeatedCharacters, char character) {
 
-        for (int i = 0; i < longOfRepeatedCharacters; i++) {
+        for (int i = 0; i < longOfRepeatedCharacters * 2; i++) {
             System.out.print(character);
         }
     }
