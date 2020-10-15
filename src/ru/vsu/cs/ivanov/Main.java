@@ -23,25 +23,25 @@ public class Main {
         for (int i = 0; i < s; i++) {
             //условие для первой и последней строки
             if ((i == 0) || (i == (s - 1))) {
-                drawStringOfFigure(s, longOfRepeatedCharacters, ' ', ' ', '*', '_');
+                drawStringOfFigure(longOfRepeatedCharacters, ' ', ' ', '*', '_');
             }
             //условие для строк c "|" в верхней и нижней части
             if (((i > 0) && (i < longOfRepeatedCharacters + 1))
                     || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) {
-                drawStringOfFigure(s, longOfRepeatedCharacters, ' ', ' ', '|', ' ');
+                drawStringOfFigure(longOfRepeatedCharacters, ' ', ' ', '|', ' ');
             }
             //условие для строк с "*" в средней части
             if (i == (longOfRepeatedCharacters + 1) || (i == ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawStringOfFigure(s, longOfRepeatedCharacters,  '*', '_', '*', ' ');
+                drawStringOfFigure(longOfRepeatedCharacters,  '*', '_', '*', ' ');
             }
             //условие для строк с "|" в средней части
             if ((i > (longOfRepeatedCharacters + 1)) && (i < ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawStringOfFigure(s, longOfRepeatedCharacters,  '|', ' ', ' ', ' ');
+                drawStringOfFigure(longOfRepeatedCharacters,  '|', ' ', ' ', ' ');
             }
         }
     }
 
-    private static void drawStringOfFigure(int s, int longOfRepeatedCharacters, char char1, char char2, char char3, char char4) {
+    private static void drawStringOfFigure(int longOfRepeatedCharacters, char char1, char char2, char char3, char char4) {
         //выводит самый левый символ
         System.out.print(char1);
         //выводит левую длинную послеовательность символов
