@@ -19,50 +19,55 @@ public class Main {
     }
 
     private static void drawFigure(int s) {
-        int longOfRepeatedCharacters = (s - 4) / 3;
+        int lengthOfRepeatedCharacters = (s - 4) / 3;
         for (int i = 0; i < s; i++) {
-            //условие для первой и последней строки
-            if ((i == 0) || (i == (s - 1))) {
-                drawStringOfFigure(longOfRepeatedCharacters, ' ', ' ', '*', '_');
+            if (isFirstLastStrings(i, s)) {
+                drawString(lengthOfRepeatedCharacters, ' ', ' ', '*', '_');
             }
-            //условие для строк c "|" в верхней и нижней части
-            if (((i > 0) && (i < longOfRepeatedCharacters + 1))
-                    || (i < (s - 1) && (i > ((s - 1) - longOfRepeatedCharacters - 1)))) {
-                drawStringOfFigure(longOfRepeatedCharacters, ' ', ' ', '|', ' ');
+            if (isUpperLowerStringsVerticalBars(i, s, lengthOfRepeatedCharacters)) {
+                drawString(lengthOfRepeatedCharacters, ' ', ' ', '|', ' ');
             }
-            //условие для строк с "*" в средней части
-            if (i == (longOfRepeatedCharacters + 1) || (i == ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawStringOfFigure(longOfRepeatedCharacters,  '*', '_', '*', ' ');
+            if (isMiddleStringsAsterisks(i, s, lengthOfRepeatedCharacters)) {
+                drawString(lengthOfRepeatedCharacters,  '*', '_', '*', ' ');
             }
-            //условие для строк с "|" в средней части
-            if ((i > (longOfRepeatedCharacters + 1)) && (i < ((s - 1) - longOfRepeatedCharacters - 1))) {
-                drawStringOfFigure(longOfRepeatedCharacters,  '|', ' ', ' ', ' ');
+            if (isMiddleStringsVerticalBars(i, s, lengthOfRepeatedCharacters)) {
+                drawString(lengthOfRepeatedCharacters,  '|', ' ', ' ', ' ');
             }
         }
     }
 
-    private static void drawStringOfFigure(int longOfRepeatedCharacters, char char1, char char2, char char3, char char4) {
-        //выводит самый левый символ
+    private static boolean isFirstLastStrings(int i, int s) {
+        return (i == 0) || (i == (s - 1));
+    }
+
+    private static boolean isUpperLowerStringsVerticalBars(int i, int s, int lengthOfRepeatedCharacters) {
+        return ((i > 0) && (i < lengthOfRepeatedCharacters + 1))
+                || (i < (s - 1) && (i > ((s - 1) - lengthOfRepeatedCharacters - 1)));
+    }
+
+    private static boolean isMiddleStringsAsterisks(int i, int s, int lengthOfRepeatedCharacters) {
+        return i == (lengthOfRepeatedCharacters + 1) || (i == ((s - 1) - lengthOfRepeatedCharacters - 1));
+    }
+
+    private static boolean isMiddleStringsVerticalBars(int i, int s, int lengthOfRepeatedCharacters) {
+        return  (i > (lengthOfRepeatedCharacters + 1)) && (i < ((s - 1) - lengthOfRepeatedCharacters - 1));
+    }
+
+
+    private static void drawString(int lengthOfRepeatedCharacters, char char1, char char2, char char3, char char4) {
         System.out.print(char1);
-        //выводит левую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char2);
-        //выводит средний левый символ
+        drawRepeatedCharacters(lengthOfRepeatedCharacters, char2);
         System.out.print(char3);
-        //выводит среднюю длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char4);
-        //выводит средний правый символ
+        drawRepeatedCharacters(lengthOfRepeatedCharacters, char4);
         System.out.print(char3);
-        //выводит правую длинную послеовательность символов
-        drawRepeatedCharactersForPartOfStringOfFigure(longOfRepeatedCharacters, char2);
-        //выводит самый правый символ
+        drawRepeatedCharacters(lengthOfRepeatedCharacters, char2);
         System.out.println(char1);
     }
 
-    //выводит длинные последовательности повторяющихся символов
-    private static void drawRepeatedCharactersForPartOfStringOfFigure(int longOfRepeatedCharacters, char character) {
+    private static void drawRepeatedCharacters(int lengthOfRepeatedCharacters, char ch) {
 
-        for (int i = 0; i < longOfRepeatedCharacters; i++) {
-            System.out.print(character);
+        for (int i = 0; i < lengthOfRepeatedCharacters; i++) {
+            System.out.print(ch);
         }
     }
 }
